@@ -1,0 +1,81 @@
+{
+  "name": "Confusion restaurant web development project",
+  "version": "1.0.0",
+  "description": "Web Developmemt project from scratch",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run watch:all",
+    "test": "\"echo Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ css/ && npm run lite",
+    "watch:scss": "onchange \"css/*.scss\" -- npm run scss", 
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "copycss": "copyfiles -f CSS/* dist/CSS",
+    "imagemin": "imagemin img/* -o dist/img",
+    "usemin": "usemin contact.html -d dist --htmlmin -o dist/contact.html && usemin About.html -d dist --htmlmin -o dist/About.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin && npm run cssmin && npm run scss"
+  },
+  "author": "James Akweter",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",  
+    "clean": "^4.0.2",
+    "copyfiles": "^2.4.1",
+    "del": "^6.0.0",
+    "grunt": "^1.4.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-htmlmin": "^3.1.0",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-filerev": "^2.3.1",
+    "grunt-sass": "^3.1.0",
+    "grunt-usemin": "^0.1.13",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-uglify": "^3.0.2",
+    "imagemin": "^8.0.1",
+    "imagemin-cli": "^2.1.0",
+    "less": "^4.1.2",
+    "lite-server": "^2.6.1",
+    "node-sass": "^7.0.1",
+    "onchange": "^7.1.0",
+    "parallelshell": "^3.0.2",
+    "rimraf": "^3.0.2",
+    "sass": "^1.49.0",
+    "time-grunt": "^2.0.0",
+    "uglify-js": "^3.14.5",
+    "usemin": "^0.6.0",
+    "usemin-cli": "^0.0.7",
+    "watch": "^0.13.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.1",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.6.0",
+    "node": "^17.3.0",
+    "popper.js": "^1.12.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "Building a website for confusion restaurant from scratch"
+  ],
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}
